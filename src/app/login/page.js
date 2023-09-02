@@ -40,11 +40,13 @@
 
 "use client";
 import Header from "@/components/Header";
+import LOGO_IMAGE from "@/../public/assets/Logo/logo.png";
 import Image from "next/image";
 import { BASE_URL } from "@/Constants";
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import axios from 'axios';
+import { redirect } from "next/navigation";
 
 export default function Login() {
   const router = useRouter();
