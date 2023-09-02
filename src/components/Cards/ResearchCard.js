@@ -1,8 +1,9 @@
-"use client"
 import React from 'react';
 import Image from "next/image";
 
 const ResearchCard = ({ data }) => {
+  const detailsLines = data.details.split('\n');
+  
   return (
     <div className="flex gap-10 w-[50%]">
       <div className="max-w-unset-imp rounded-sm flex items-center justify-center">
@@ -14,11 +15,20 @@ const ResearchCard = ({ data }) => {
         />
       </div>
       <div>
-        <span className="text-primary underline font-bold text-base -tracking-2">
+        <a
+          className="text-primary underline font-bold text-base -tracking-2"
+          href={data?.link}
+        >
           {data.title}
-        </span>
+        </a>
         <p className="text-gray-600 font-medium text-base -tracking-2 mt-4">
-          {data.details}
+          {detailsLines.map((line, index) => (
+            <React.Fragment key={index}>
+              {index === 0 ? <span className="font-bold">{line}</span> : line}
+              {/* If it's not the last line, add a <br /> for visual line break */}
+              {index !== detailsLines.length - 1 && <br />}
+            </React.Fragment>
+          ))}
         </p>
       </div>
     </div>
@@ -27,13 +37,14 @@ const ResearchCard = ({ data }) => {
 
 export default ResearchCard;
 
+// previous code
+
 
 // "use client"
 // import React from 'react';
 // import Image from "next/image";
 
 // const ResearchCard = ({ data }) => {
-//   const detailsLines = data.details.split('\n');
 //   return (
 //     <div className="flex gap-10 w-[50%]">
 //       <div className="max-w-unset-imp rounded-sm flex items-center justify-center">
@@ -45,20 +56,11 @@ export default ResearchCard;
 //         />
 //       </div>
 //       <div>
-//         <a
-//           className="text-primary underline font-bold text-base -tracking-2"
-//           href={data?.link}
-//         >
+//         <span className="text-primary underline font-bold text-base -tracking-2">
 //           {data.title}
-//         </a>
+//         </span>
 //         <p className="text-gray-600 font-medium text-base -tracking-2 mt-4">
-//           {detailsLines.map((line, index) => (
-//             <React.Fragment key={index}>
-//               {index === 0 ? <span className="font-bold">{line}</span> : line}
-//               {/* If it's not the last line, add a <br /> for visual line break */}
-//               {index !== detailsLines.length - 1 && <br />}
-//             </React.Fragment>
-//           ))}
+//           {data.details}
 //         </p>
 //       </div>
 //     </div>
@@ -66,3 +68,7 @@ export default ResearchCard;
 // };
 
 // export default ResearchCard;
+
+
+
+
