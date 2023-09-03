@@ -13,7 +13,7 @@ const inter = Inter({ weight: ["500", "800"], subsets: ["latin"] });
 
 const RESEARCH_CARDS_ARRAY = [
   {
-    title: "Contextual search",
+    title: "Contextual-search",
     details: "Beyond Traditional Search \n Dive into a sophisticated semantic search experience. Find not just words, but the very essence of your inquiry within financial documents.",
     image: SEARCH_ICON,
     link: 'contextual-search'
