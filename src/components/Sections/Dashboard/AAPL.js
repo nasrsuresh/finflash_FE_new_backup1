@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const AAPL = () => {
   return (
-    <div className="w-[40%] bg-white  text-black p-9  h-[92vh]">
+    <div className="w-[40%] bg-white  text-black p-9  h-[120vh]">
       <Image
         src={gifPath}
         alt="explanation gif"
