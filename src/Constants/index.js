@@ -1,4 +1,4 @@
-export const BASE_URL = "https://noneed.live/";
+export const BASE_URL = "https://api.finance-flash.com/";
 
 export const SET_INDEX_KEY_URL = BASE_URL + "set_index_key";
 export const SEARCH_URL = BASE_URL + "search";
