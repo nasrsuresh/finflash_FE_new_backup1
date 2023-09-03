@@ -162,7 +162,7 @@ const Header = ({ modalContainer }) => {
             <div className="p-3">
               <button
                 onClick={() => {
-                  router.push("http://127.0.0.1:5000/login");
+                  router.push("https://api.finance-flash.com/login");
                 }}
                 className="bg-white border-2 border-gray-300 text-gray-800 rounded-md p-2 flex items-center space-x-2 hover:bg-gray-100 focus:outline-none"
               >
@@ -178,7 +178,7 @@ const Header = ({ modalContainer }) => {
               <button
                 className="bg-white border-2 border-gray-300 text-gray-800 rounded-md p-2 flex items-center space-x-2 hover:bg-gray-100 focus:outline-none"
                 onClick={() => {
-                  router.push("http://127.0.0.1:5000/login-linkedin");
+                  router.push("https://api.finance-flash.com/login-linkedin");
                 }}
               >
                 <Image
