@@ -1,11 +1,10 @@
+"use client"
 import React from 'react';
 import Image from "next/image";
 
-const ResearchCard = ({ data }) => {
-  const detailsLines = data.details.split('\n');
-  
+const ResearchCard = ({ data, titleClass }) => {
   return (
-    <div className="flex gap-10 w-[50%]">
+    <div className="flex gap-10 w-[50%] relative h-full">
       <div className="max-w-unset-imp rounded-sm flex items-center justify-center">
         <Image
           src={data.image}
@@ -15,21 +14,18 @@ const ResearchCard = ({ data }) => {
         />
       </div>
       <div>
-        <a
-          className="text-primary underline font-bold text-base -tracking-2"
-          href={data?.link}
-        >
+        <span className={`text-primary underline font-bold text-base -tracking-2 ${titleClass}`}>
           {data.title}
-        </a>
-        <p className="text-gray-600 font-medium text-base -tracking-2 mt-4">
-          {detailsLines.map((line, index) => (
+        </span>
+        {/* Splitting and rendering the details string inline */}
+        <div className="text-gray-600 font-medium text-base -tracking-2 mt-4">
+          {data.details.split('\n').map((line, index) => (
             <React.Fragment key={index}>
               {index === 0 ? <span className="font-bold">{line}</span> : line}
-              {/* If it's not the last line, add a <br /> for visual line break */}
-              {index !== detailsLines.length - 1 && <br />}
+              {index !== data.details.split('\n').length - 1 && <br />}
             </React.Fragment>
           ))}
-        </p>
+        </div>
       </div>
     </div>
   );
