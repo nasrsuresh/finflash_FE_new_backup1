@@ -57,9 +57,16 @@ const Research = () => {
   return (
     <div className={`${inter.className} w-[60%] p-8 bg-[#F7F8F9] h-[120vh]`}>
       {showFlashMessage && (
-        <div className="fixed top-0 left-0 w-full bg-red-500 text-white p-4 flex justify-between">
-          <span>Please log in first.</span>
-          <button onClick={() => setShowFlashMessage(false)}>Close</button>
+        <div className="fixed top-30 left-20 w-[60%] bg-red-600 border-l-4 border-red-800 p-4 flex justify-between items-center shadow-lg rounded-md">
+          <div className="flex items-center">
+          <button className="cursor-pointer mr-2" onClick={() => setShowFlashMessage(false)}>
+           <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+           </svg>
+          </button>
+        <span className="text-white font-semibold">Please log in first.</span>
+      </div>
+      <button className="text-red-200 hover:text-red-100 transition duration-150" onClick={() => setShowFlashMessage(false)}>Close</button>
         </div>
       )}
 
