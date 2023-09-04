@@ -61,9 +61,14 @@ const Header = ({ modalContainer }) => {
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   useEffect(() => {
-    setIsLoggedIn(Boolean(localStorage.getItem('token')));
-    }, [router.pathname]);
-
+    const tokenFromUrl = new URL(window.location.href).searchParams.get('token');
+    if (tokenFromUrl) {
+      localStorage.setItem('token', tokenFromUrl);
+      setIsLoggedIn(true);
+    } else {
+      setIsLoggedIn(Boolean(localStorage.getItem('token')));
+    }
+  }, [router.pathname]);
   function openModal() {
     setIsOpen(true);
   }
