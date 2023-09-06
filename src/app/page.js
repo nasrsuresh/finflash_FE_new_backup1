@@ -7,25 +7,6 @@ import Script from 'next/script';
 import { useRef, useEffect } from "react";
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
-"use client";
-import Header from "@/components/Header";
-import Research from "@/components/Sections/Dashboard/Research";
-import AAPL from "@/components/Sections/Dashboard/AAPL";
-import { Inter } from "next/font/google";
-import Script from 'next/script';
-import { useRef, useEffect } from "react";
-import axios from 'axios';
-import { useAuth } from '@/hooks/useAuth';
-import { useRouter } from 'next/navigation';
-"use client";
-import Header from "@/components/Header";
-import Research from "@/components/Sections/Dashboard/Research";
-import AAPL from "@/components/Sections/Dashboard/AAPL";
-import { Inter } from "next/font/google";
-import Script from 'next/script';
-import { useRef, useEffect } from "react";
-import axios from 'axios';
-import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/router':
 
 
@@ -177,19 +158,19 @@ export default function Home() {
   const mainref = useRef();
   const router = useRouter();
 
-  // useEffect(() => {
-  //   // Google Analytics Manual Page View Tracking
-  //   const handleRouteChange = (url) => {
-  //     window.gtag('config', 'G-K1WFKY4JMH', {
-  //       page_path: url,
-  //     });
-  //   };
-  //   handleRouteChange(window.location.pathname + window.location.search);
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
+  useEffect(() => {
+    // Google Analytics Manual Page View Tracking
+    const handleRouteChange = (url) => {
+      window.gtag('config', 'G-K1WFKY4JMH', {
+        page_path: url,
+      });
+    };
+    handleRouteChange(window.location.pathname + window.location.search);
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
