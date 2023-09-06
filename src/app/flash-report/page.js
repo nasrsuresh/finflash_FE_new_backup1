@@ -11,7 +11,6 @@ import {
 } from "@/Constants";
 import Loader from "@/components/Loader";
 import { defaultOption } from "@/Constants/CompanyOptions";
-import WithGA from "@/components/withGA";
 
 function formatNumber(number) {
   const ranges = [
@@ -516,7 +515,6 @@ export default function FlashReport() {
   };
 
   return (
-    <WithGA>
     <main className="h-[100vh] bg-[#F7F8F9] text-black">
       <Header />
       <div className="w-100 h-[92vh] p-8 flex">
@@ -546,7 +544,6 @@ export default function FlashReport() {
         )}
       </div>
     </main>
-    </WithGA>
   );
 }
 
