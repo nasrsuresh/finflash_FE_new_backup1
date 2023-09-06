@@ -8,7 +8,6 @@ import Header from "@/components/Header";
 import TextDropdown from "@/components/Inputs/TextDropdown";
 import Chat from "@/components/Sections/GPT/Chat";
 import { useEffect, useState } from "react";
-import WithGA from "@/components/withGA";
 
 // const options = ["Sales Options", "Sales Options 2", "Sales Options 3"];
 export default function SecGpt() {
@@ -38,6 +37,5 @@ export default function SecGpt() {
         </div>
       </div>
     </main>
-    </WithGA>
   );
 }
