@@ -19,7 +19,6 @@ export default function SecGpt() {
     }
   }, [dropdownValue]);
   return (
-    <WithGA>
     <main className="h-[100vh] bg-[#F7F8F9]">
       <Header />
       <div className="w-100 h-[92vh] p-8 flex justify-center">
