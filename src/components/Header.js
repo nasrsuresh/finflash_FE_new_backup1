@@ -162,7 +162,7 @@ const Header = ({ modalContainer }) => {
           </div>
           <div className="w-fit m-auto text-center">
             <h1 className="p-5 text-black font-bold">
-              It just takes two clicks, No credit card needed! 
+              It just takes two clicks!
             </h1>
             <div className="p-3">
               <button
