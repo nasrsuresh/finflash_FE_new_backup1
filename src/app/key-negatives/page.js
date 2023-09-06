@@ -20,6 +20,7 @@ import {
   LINK_10K_URL,
 } from "@/Constants";
 import Loader from "@/components/Loader";
+import WithGA from "@/components/withGA";
 
 export default function KeyNegatives() {
   const [dropdownValue, setDropdownValue] = useState(defaultOption);
@@ -216,6 +217,7 @@ export default function KeyNegatives() {
   }, [dropdownValue, selectedButton]);
 
   return (
+    <WithGA>
     <main className="h-[100vh]  bg-[#F7F8F9]">
       <Header />
 
@@ -285,5 +287,6 @@ export default function KeyNegatives() {
         )}
       </div>
     </main>
+    </WithGA>
   );
 }
