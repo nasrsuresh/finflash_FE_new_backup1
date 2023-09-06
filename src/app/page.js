@@ -15,7 +15,7 @@ const inter = Inter({ weight: ["500", "700"], subsets: ["latin"] });
 
 export default function Home() {
   const mainref = useRef();
-  const router = withRouter();
+  const router = useRouter();
 
   useEffect(() => {
     // Google Analytics Manual Page View Tracking
