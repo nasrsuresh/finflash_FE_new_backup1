@@ -8,6 +8,8 @@ import Header from "@/components/Header";
 import TextDropdown from "@/components/Inputs/TextDropdown";
 import Chat from "@/components/Sections/GPT/Chat";
 import { useEffect, useState } from "react";
+import WithGA from "@/components/withGA";
+
 // const options = ["Sales Options", "Sales Options 2", "Sales Options 3"];
 export default function SecGpt() {
   const [dropdownValue, setDropdownValue] = useState(defaultOption);
@@ -18,6 +20,7 @@ export default function SecGpt() {
     }
   }, [dropdownValue]);
   return (
+    <WithGA>
     <main className="h-[100vh] bg-[#F7F8F9]">
       <Header />
       <div className="w-100 h-[92vh] p-8 flex justify-center">
@@ -35,5 +38,6 @@ export default function SecGpt() {
         </div>
       </div>
     </main>
+    </WithGA>
   );
 }
