@@ -7,7 +7,9 @@ import Script from 'next/script';
 import { useRef, useEffect } from "react";
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
-import { useRouter } from 'next/router';
+import { useRouter } from 'next/navigation';
+import { withRouter } from 'next/router';
+
 
 
 const inter = Inter({ weight: ["500", "700"], subsets: ["latin"] });
@@ -19,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     // Google Analytics Manual Page View Tracking
     const handleRouteChange = (url) => {
-      window.gtag('config', 'G-xxxxxxxxxx', {
+      window.gtag('config', 'G-K1WFKY4JMH', {
         page_path: url,
       });
     };
