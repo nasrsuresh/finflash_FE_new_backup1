@@ -64,7 +64,7 @@ const Research = () => {
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
            </svg>
           </button>
-        <span className="text-white font-semibold">Kindly Sign Up For Free To Proceed Further.</span>
+        <span className="text-white font-semibold">Kindly Sign Up To Proceed Further.</span>
       </div>
       <button className="text-red-200 hover:text-red-100 transition duration-150" onClick={() => setShowFlashMessage(false)}>Close</button>
         </div>
