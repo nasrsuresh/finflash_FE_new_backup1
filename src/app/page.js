@@ -107,19 +107,19 @@ export default function Home() {
   const mainref = useRef();
   const router = useRouter();
 
-  // useEffect(() => {
-  //   // Google Analytics Manual Page View Tracking
-  //   const handleRouteChange = (url) => {
-  //     window.gtag('config', 'G-K1WFKY4JMH', {
-  //       page_path: url,
-  //     });
-  //   };
-  //   handleRouteChange(window.location.pathname + window.location.search);
-  //   router.events.on('routeChangeComplete', handleRouteChange);
-  //   return () => {
-  //     router.events.off('routeChangeComplete', handleRouteChange);
-  //   };
-  // }, [router.events]);
+  useEffect(() => {
+    // Google Analytics Manual Page View Tracking
+    const handleRouteChange = (url) => {
+      window.gtag('config', 'G-K1WFKY4JMH', {
+        page_path: url,
+      });
+    };
+    handleRouteChange(window.location.pathname + window.location.search);
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
