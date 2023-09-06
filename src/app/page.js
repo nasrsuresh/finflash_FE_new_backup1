@@ -6,7 +6,8 @@ import { Inter } from "next/font/google";
 import { useRef, useEffect } from "react";
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
-import { useRouter } from "next/navigation"; // Note: corrected "next/navigation" to "next/router"
+import { useRouter } from "next/navigation"; 
+import WithGA from "@/components/withGA";
 
 const inter = Inter({ weight: ["500", "700"], subsets: ["latin"] });
 
@@ -40,6 +41,7 @@ export default function Home() {
 
 
   return (
+    <WithGA>
     <main ref={mainref} className={`${inter.className} h-[100vh]"`}>
       <Header modalContainer={mainref} />
       <div className="w-100 h-[92vh] flex">
@@ -47,5 +49,6 @@ export default function Home() {
         <AAPL />
       </div>
     </main>
+    </WithGA>
   );
 }
