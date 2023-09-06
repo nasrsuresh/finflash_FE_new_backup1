@@ -1,7 +1,9 @@
 import Header from "@/components/Header";
+import WithGA from "@/components/withGA";
 
 export default function Financials() {
   return (
+    <WithGA>
     <main className="h-[100vh]">
       <Header />
       <div className="w-full h-[92vh] p-8 flex items-center justify-center">
@@ -10,6 +12,7 @@ export default function Financials() {
         </div>
       </div>
     </main>
+    </WithGA>
   );
 }
 
