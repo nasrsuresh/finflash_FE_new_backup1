@@ -21,6 +21,7 @@ import Head from "next/head";
 import { defaultOption, freeOptions, options } from "@/Constants/CompanyOptions";
 import { usePathname, useRouter } from "next/navigation";
 import Loader from "@/components/Loader";
+import WithGA from "@/components/withGA";
 
 
 
