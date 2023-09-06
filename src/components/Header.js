@@ -144,7 +144,7 @@ const Header = ({ modalContainer }) => {
               className="bg-white text-primary text-base font-bold w-24 h-11 rounded-md"
               onClick={openModal}
             >
-              Log In
+              Sign Up For Free
             </button>
           )
         )}
