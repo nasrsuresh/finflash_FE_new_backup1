@@ -8,7 +8,7 @@ import { useRef, useEffect } from "react";
 import axios from 'axios';
 import { useAuth } from '@/hooks/useAuth';
 import { useRouter } from 'next/navigation';
-
+import Analytics from './Analytics';
 
 const inter = Inter({ weight: ["500", "700"], subsets: ["latin"] });
 
@@ -56,6 +56,7 @@ export default function Home() {
 
   return (
     <main ref={mainref} className={`${inter.className} h-[100vh]"`}>
+      <Analytics />
       {/* Load Google Analytics */}
       <Script
         src={`https://www.googletagmanager.com/gtag/js?id=G-K1WFKY4JMH`}
