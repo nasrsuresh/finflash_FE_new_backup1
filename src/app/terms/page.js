@@ -1,10 +1,10 @@
+"use client"
 import React from 'react';
 import Header from "@/components/Header";
 import { Inter } from "next/font/google";
 import Script from 'next/script';
 import { useRef } from "react";
-import { useRouter } from 'next/router';
-import Analytics from './Analytics';
+import { useRouter } from 'next/navigation';
 
 const inter = Inter({ weight: ["500", "700"], subsets: ["latin"] });
 
@@ -14,21 +14,6 @@ export default function PublicPage() {
 
   return (
     <main ref={mainref} className={`${inter.className} h-[100vh]"`}>
-      <Analytics />
-      {/* Load Google Analytics */}
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=G-K1WFKY4JMH`}
-        strategy="afterInteractive"
-      />
-      <Script strategy="afterInteractive">
-        {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){window.dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-K1WFKY4JMH', { send_page_view: false });
-        `}
-      </Script>
-
       <Header modalContainer={mainref} />
       <div className="container mx-auto p-4">
     <h1>Terms and Conditions</h1>
