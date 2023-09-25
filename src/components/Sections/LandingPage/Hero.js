@@ -33,7 +33,7 @@ const Hero = () => (
         <div className="w-7/10 text-right">
           <header className="text-center">
             <h1
-              className="whitespace-pre-line text-5xl font-bold leading-normal text-gray-900"
+              className="whitespace-pre-line text-3xl md:text-5xl font-bold md:leading-normal text-gray-900"
             >
               Crafted for your needs &amp; Automation solutions for Boutique Investment Mgmt.
               &amp; Research firms
