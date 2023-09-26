@@ -1,47 +1,14 @@
-import Link from 'next/link';
-
-import Image from 'next/image';
-import LOGO_IMAGE from "@/../public/assets/Logo/logo.png";
-import Header from '@/components/Header';
-import { useEffect, useRef, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import { useAuth } from '@/hooks/useAuth';
+import LandingHeader from '@/components/Sections/LandingPage/LandingHeader';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
 
 
 const Hero = () => {
-  const mainref = useRef();
-  const router = useRouter();
-  const [modalIsOpen, setIsOpen] = useState(false);
 
-  useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const tokenFromURL = urlParams.get('token');
-    console.log("Token from window.location:", tokenFromURL);
-
-    if (tokenFromURL) {
-      // Store token in localStorage
-      localStorage.setItem('token', tokenFromURL);
-      console.log("Token stored in localStorage");
-
-      // Set axios headers
-      axios.defaults.headers.common['Authorization'] = `Bearer ${tokenFromURL}`;
-
-      if (router.isReady) {
-        // Remove the token from the URL for cleanliness
-        router.replace(router.pathname);
-      }
-    } else if (useAuth().isAuthenticated()) {
-      // If not getting token from URL but is authenticated, set axios headers
-      const token = localStorage.getItem('token');
-      axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
-    }
-  }, [router.isReady]);
 
   return (
-    <div ref={mainref} className="bg-gray-100">
-      <Header modalContainer={mainref} modalIsOpen={modalIsOpen} setIsOpen={setIsOpen} />
+    <div className="bg-gray-100">
+      <LandingHeader />
       <div className="mx-auto container px-3 pt-20 pb-32">
         <div className="flex w-full gap-6 flex-col md:flex-row">
           <div className="text-right">

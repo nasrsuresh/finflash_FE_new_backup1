@@ -10,7 +10,7 @@ const Banner = () => (
       subtitle="It doesn't have to be."
       button={
         <Link href="https://creativedesignsguru.com/category/nextjs/">
-          <div className="inline-block rounded-md text-center text-white bg-primary cursor-pointer text-lg font-semibold py-2 px-4">
+          <div className="inline-block rounded-md text-center text-white font-extrabold text-xl py-4 px-6 bg-primary cursor-pointer">
             Book a consultation
           </div>
           <div className='text-center'>
