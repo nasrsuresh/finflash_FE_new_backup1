@@ -69,6 +69,8 @@ const Header = ({ modalContainer, modalIsOpen, setIsOpen }) => {
     } else {
       setIsLoggedIn(Boolean(localStorage.getItem('token')));
     }
+
+    console.log("Token: ", isLoggedIn)
   }, [router.pathname]);
 
   function openModal() {
@@ -108,14 +110,21 @@ const Header = ({ modalContainer, modalIsOpen, setIsOpen }) => {
         className={`${jakarta.className} fixed top-0 z-10 md:static w-full sm:h-[8vh] flex flex-col sm:flex-row items-center justify-between bg-primary sm:px-[60px] py-2 sm:py-0`}
       >
         <div className="flex items-center sm:gap-6">
-          {currentPage !== "/" && (
+          {currentPage !== "/" && currentPage !== "/landing-page" && (
             <button onClick={() => setMenuIsOpen(!menuIsOpen)} className="fixed left-0 h-[64px] bg-black md:hidden p-4 sm:h-[8vh] z-10">
               <RxHamburgerMenu color="white" size="30" />
             </button>
           )}
-          <Image src={LOGO_IMAGE} className="h-[48px] w-[48px]" alt="LOGO" />
-          <p className="text-[22px] text-white font-bold">Finance Flash</p>
-          {currentPage !== "/" && (
+          <Link href='/'>
+            <Image src={LOGO_IMAGE} className="h-[48px] w-[48px]" alt="LOGO" />
+
+          </Link>
+          <Link href='/'>
+
+            <p className="text-[22px] text-white font-bold">Finance Flash</p>
+          </Link>
+
+          {currentPage !== "/" && currentPage !== "/landing-page" && (
 
             <div className={`${menuIsOpen ? '' : 'hidden'} z-10 md:block fixed md:static top-20 left-0 bg-white md:bg-[unset] shadow-xl md:shadow-none px-4 py-8 md:p-0 flex-col md:flex-row flex gap-3 ml-5`}>
               {SCREENS_ARRAY.map((v) => (
@@ -146,7 +155,7 @@ const Header = ({ modalContainer, modalIsOpen, setIsOpen }) => {
             </div>
 
           ) : (
-            currentPage !== "/" ? (
+            currentPage !== "/" && currentPage !== "/landing-page" ? (
               <Link href={"/"}>
                 <button className="bg-primary text-white text-2xl">
                   <GoHome />

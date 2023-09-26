@@ -56,9 +56,6 @@ export default function Home() {
     }
   }, [router.isReady]);
 
-  function openModal() {
-
-  }
 
   return (
     <main ref={mainref} className={`${inter.className} h-[100vh]"`}>

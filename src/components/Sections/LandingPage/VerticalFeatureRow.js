@@ -24,7 +24,7 @@ const VerticalFeatureRow = (props) => {
 
       <div className="w-full p-6 sm:w-1/2">
 
-        <img src={`${props.image}`} alt={props.imageAlt} />
+        <img className={`w-80 mx-auto md:mx-0 ${props.reverse ? 'md:mr-auto' : 'md:ml-auto'}`} src={`${props.image}`} alt={props.imageAlt} />
       </div>
     </div>
   );

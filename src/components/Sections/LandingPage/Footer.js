@@ -6,10 +6,7 @@ const Footer = () => (
   <div className="bg-gray-100">
     <div className="mx-auto max-w-screen-lg px-3 py-16">
       <div className="text-center">
-        <Link href="/">
-          <Image src={LOGO_IMAGE} className="h-[48px] w-[48px]" alt="LOGO" />
 
-        </Link>
         <nav >
           <ul
             className="gap-4 mt-5 flex flex-row justify-center text-xl font-medium text-gray-800"
