@@ -1,6 +1,7 @@
 import LandingHeader from '@/components/Sections/LandingPage/LandingHeader';
 import { Splide, SplideSlide } from '@splidejs/react-splide';
 import '@splidejs/react-splide/css';
+import Link from 'next/link';
 
 
 const Hero = () => {
@@ -23,14 +24,14 @@ const Hero = () => {
               <div className="mb-16 mt-4 text-2xl">
                 Curious to discover a solution precisely crafted for your needs?
               </div>
-              <div >
+              <Link className='flex w-fit flex-col' href="https://calendly.com/sdivyamit/30min?back=1&month=2023-09">
                 <div className="inline-block rounded-md text-center text-white font-extrabold text-xl py-4 px-6 bg-primary cursor-pointer">
                   Book a consultation
                 </div>
-                <div>
+                <div className='text-center'>
                   (No strings attached)
                 </div>
-              </div>
+              </Link>
 
             </header>
           </div>

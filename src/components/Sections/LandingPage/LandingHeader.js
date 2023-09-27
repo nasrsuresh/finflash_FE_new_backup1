@@ -31,12 +31,12 @@ const LandingHeader = () => {
 
         </div>
         <div className="fixed md:static w-full md:w-[unset] bottom-0 left-0 z-50 flex">
-          <button
-            className="bg-primary text-white md:bg-white md:text-primary text-base  font-bold w-full md:w-56 h-11 md:rounded-md"
+          <Link  href="https://calendly.com/sdivyamit/30min?back=1&month=2023-09"
+            className="bg-primary flex items-center justify-center text-white md:bg-white md:text-primary text-base  font-bold w-full md:w-56 h-11 md:rounded-md"
 
           >
             Book a consultation
-          </button>
+          </Link>
         </div>
 
       </nav>
